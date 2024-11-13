@@ -14,16 +14,17 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "atom";
+  wsl.defaultUser = "nixos";
 
-  security.sudo.wheelNeedsPassword = true;
+  # security.sudo.wheelNeedsPassword = true;
 
+  users.mutableUsers = false;
   users.users.atom = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     password = "temporary";
   };
-  
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
