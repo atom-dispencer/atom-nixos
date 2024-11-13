@@ -16,6 +16,19 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
+  # Enable required features and the utilities they require
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    wget
+    curl
+  ]
+  environment.variables.EDITOR = "vim";
+
   # security.sudo.wheelNeedsPassword = true;
 
   users.mutableUsers = false;
