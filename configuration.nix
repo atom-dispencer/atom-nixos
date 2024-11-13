@@ -14,7 +14,15 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "atom";
+
+  security.sudo.wheelNeedsPassword = true;
+
+  users.users.atom = {
+    isNormalUser = true;
+    extraGroups = [ "wheel", "networkmanager" ];
+    password = "temporary";
+  }
   
 
   # This value determines the NixOS release from which the default
