@@ -22,7 +22,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     password = "temporary";
-  }
+  };
   
 
   # This value determines the NixOS release from which the default
