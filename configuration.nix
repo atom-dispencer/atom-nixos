@@ -26,7 +26,7 @@
     vim
     wget
     curl
-  ]
+  ];
   environment.variables.EDITOR = "vim";
 
   # security.sudo.wheelNeedsPassword = true;
