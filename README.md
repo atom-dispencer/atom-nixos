@@ -9,5 +9,6 @@ Clone the GitHub image:
 ```sh
 cd /etc/nixos/
 nix-shell -p git
-git clone https://github.com/atom-dispencer/atom-nixos
+sudo rm configuration.nix
+sudo git clone https://github.com/atom-dispencer/atom-nixos .
 ```
