@@ -24,6 +24,7 @@
 
         git = {
           enable = true;
+          userName = "Adam Spencer";
         };
       };
     };
