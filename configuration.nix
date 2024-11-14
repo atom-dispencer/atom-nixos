@@ -27,12 +27,12 @@
 
   # security.sudo.wheelNeedsPassword = true;
 
-  #users.mutableUsers = false;
-  #users.users.atom = {
-  #  isNormalUser = true;
-  #  extraGroups = [ "wheel" "networkmanager" ];
-  #  password = "temporary";
-  #};
+  users.mutableUsers = false;
+  users.users.atom = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    password = "temporary";
+  };
 
 
   # This value determines the NixOS release from which the default
