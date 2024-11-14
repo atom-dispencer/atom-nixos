@@ -13,7 +13,11 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     
-    nixosConfigurations.atom-nixos = nixpkgs.lib.nixosSystem {
+    # nixos here is the default name
+    # I only have one config so it doesnt matter
+    # Could be changed to .atom-nix, but would need to use:
+    #   nixos-rebuild switch --flake .#atom-nix
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
