@@ -22,7 +22,6 @@
     wget
     curl
   ];
-  environment.variables.EDITOR = "nvim";
 
   # security.sudo.wheelNeedsPassword = true;
 
