@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ args: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
@@ -28,7 +28,7 @@
 
       # Default (WSL)
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit args; };
         system = "x86_64-linux";
         modules = [
           ./system/system.nix
