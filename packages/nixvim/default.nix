@@ -1,9 +1,4 @@
-{ config, pkgs, ... }: {
-
-  #home.file."${config.xdg.configHome}/nvim" = {
-  #source = ./config/nvim;
-  #recursive = true;
-  #};
+{ pkgs, ... }: {
 
   programs.nixvim = {
     enable = true;
