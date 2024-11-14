@@ -1,7 +1,7 @@
 {
   imports = [
-    ./fish.nix
-    ./git.nix
-    ./nixvim
+#    ./fish.nix
+#    ./git.nix
+#    ./nixvim
   ];
 }
