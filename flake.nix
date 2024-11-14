@@ -28,6 +28,7 @@
       modules = [
         ./configuration.nix
         nixos-wsl.nixosModules.wsl
+        nixvim.homeManagerModules.nixvim
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
