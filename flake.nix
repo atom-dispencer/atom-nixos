@@ -11,13 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... }: {
+  outputs = { self, nixpkgs, nixvim, home-manager, nixos-wsl, ... }: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
