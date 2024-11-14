@@ -8,7 +8,7 @@
   home.homeDirectory = "/home/atom";
   home.stateVersion = "24.05";
 
-  # home.packages = with pkgs; [
-  #  neovim
-  # ];
+  home.packages = with pkgs; [
+   neovim
+  ];
 }
