@@ -5,15 +5,9 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, inputs, ... }:
 
 {
-  # Import stuff for Nixvim
-  imports = [
-    nixvim.homeManagerModules.nixvim
-    nixvim.nixosModules.nixvim
-    nixvim.nixDarwinModules.nixvim
-  ];
 
   # wsl comes from flake import
   wsl.enable = true;

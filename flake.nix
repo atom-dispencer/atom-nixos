@@ -7,34 +7,38 @@
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, nixos-wsl, ... }: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
     # Could be changed to .atom-nix, but would need to use:
     #   nixos-rebuild switch --flake .#atom-nix
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-        nixos-wsl.nixosModules.wsl
 
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.atom = import ./users/atom.nix;
-        }
-      ];
+    nixosConfigurations = {
+
+      # Default (WSL)
+      nixos = nixpkgs.lib.nixosSystem {
+        extraSpecialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./users/atom.nix
+          inputs.nixos-wsl.nixosModules.wsl
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
+      # Another configuration could go here :)
     };
   };
 }

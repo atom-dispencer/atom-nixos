@@ -1,13 +1,22 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   
   imports = [
     ../packages
+    inputs.home-manager.nixosModules.default
   ];
 
-  home.username = "atom";
-  home.homeDirectory = "/home/atom";
-  home.stateVersion = "24.05";
+  home-manager = {
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
 
-  home.packages = with pkgs; [
-  ];
+    # Configure atom user
+    users.atom = {
+      home.username = "atom";
+      home.homeDirectory = "/home/atom";
+      home.stateVersion = "24.05";
+
+      home.packages = with pkgs; [
+      ];
+    }
+  }
 }
