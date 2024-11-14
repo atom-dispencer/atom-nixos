@@ -19,17 +19,7 @@
       home.packages = with pkgs; [
       ];
 
-      programs = import ./packages;
-      programs.home-manager.enable = true;
-
-      #programs = {
-      #  home-manager.enable = true;
-
-      #  git = {
-      #    enable = true;
-      #    userName = "Adam Spencer";
-      #  };
-      #};
+      programs = import ./programs;
     };
   };
 }

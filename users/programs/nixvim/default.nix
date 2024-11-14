@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{
 
-  programs.nixvim = {
+  nixvim = {
     enable = true;
     #defaultEditor = true;
     #viAlias = true;
