@@ -8,6 +8,13 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Import stuff for Nixvim
+  imports = [
+    nixvim.homeManagerModules.nixvim
+    nixvim.nixosModules.nixvim
+    nixvim.nixDarwinModules.nixvim
+  ];
+
   # wsl comes from flake import
   wsl.enable = true;
   wsl.defaultUser = "nixos";
