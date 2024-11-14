@@ -19,7 +19,7 @@
       home.packages = with pkgs; [
       ];
 
-      programs = import ./packages
+      programs = import ./packages;
       programs.home-manager.enable = true;
 
       #programs = {
