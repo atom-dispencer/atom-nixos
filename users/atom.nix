@@ -7,8 +7,8 @@
 
   home-manager = {
     specialArgs = { inherit inputs; };
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
     # Configure atom user
     users.atom = {
