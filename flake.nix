@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... }: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
@@ -33,8 +33,8 @@
         modules = [
           ./system/system.nix
           ./users/atom.nix
-          inputs.nixos-wsl.nixosModules.wsl
-          inputs.home-manager.nixosModules.default
+          nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.default
         ];
       };
 
