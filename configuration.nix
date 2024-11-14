@@ -8,11 +8,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    # include NixOS-WSL modules
-    <nixos-wsl/modules>
-  ];
-
+  # wsl comes from flake import
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
@@ -23,7 +19,7 @@
   ];
   environment.systemPackages = with pkgs; [
     git
-    vim
+    neovim
     wget
     curl
   ];
