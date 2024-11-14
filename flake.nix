@@ -31,7 +31,7 @@
         specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./system/system.nix
           ./users/atom.nix
           inputs.nixos-wsl.nixosModules.wsl
           inputs.home-manager.nixosModules.default
