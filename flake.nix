@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... }: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
