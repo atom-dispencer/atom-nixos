@@ -17,7 +17,7 @@
     #};
   };
 
-  outputs = { self, nixpkgs, nixvim, home-manager, nixos-wsl, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... }: {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
