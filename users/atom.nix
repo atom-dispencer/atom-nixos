@@ -1,7 +1,11 @@
-{ config, pkgs, args, ... }: {
+{ 
+  config,     # The whole config so far
+  moduleargs, # Input map from flake.nix, contains nixpkgs home-manager modules etc.
+  ...         # The contents of moduleargs, unpacked
+}: {
   
   imports = [
-    args.home-manager.nixosModules.default
+    moduleargs.home-manager.nixosModules.default
   ];
 
   home-manager = {
@@ -16,8 +20,9 @@
 
       home.packages = with pkgs; [
       ];
+    programs = import ./programs;
 
-      programs = import ./programs;
     };
+
   };
 }

@@ -26,7 +26,7 @@
 
     nixosConfigurations = {
 
-      # Default (WSL)
+      # Default system configuration (WSL)
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit args; };
         system = "x86_64-linux";
