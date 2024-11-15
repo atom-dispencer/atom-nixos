@@ -1,24 +1,23 @@
-{ config, pkgs, args, ... }: {
+{ config, pkgs, home-manager, ... }: {
   
   imports = [
     args.home-manager.nixosModules.default
   ];
 
-  home-manager = {
-    extraSpecialArgs = { inherit args; };
-    useGlobalPkgs = true;
-    useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit args; };
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
-    # Configure atom user
-    users.atom = {
-      home.username = "atom";
-      home.homeDirectory = "/home/atom";
-      home.stateVersion = "24.05";
+  home-manager.users.atom = let
+    username = "atom";
+  in {
+    home.username = username;
+    home.homeDirectory = "/home/${username}";
+    home.stateVersion = "24.05";
 
-      home.packages = with pkgs; [
-      ];
+    home.packages = with pkgs; [
+    ];
 
-      programs = import ./programs;
-    };
+    programs = import ./programs;
   };
 }
