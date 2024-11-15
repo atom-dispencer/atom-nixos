@@ -17,7 +17,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ args: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ args: let
+    inherit (self) outputs;
+  in {
     
     # nixos here is the default name
     # I only have one config so it doesnt matter
