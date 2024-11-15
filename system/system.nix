@@ -18,7 +18,7 @@
     "nix-command"
     "flakes"
   ];
-  environment.systemPackages = with moduleargs.nixpkgs; [
+  environment.systemPackages = with nixpkgs; [
     git
     wget
     curl
@@ -30,7 +30,7 @@
   users.users.atom = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    password = "temporary";
+    password = "atom";
   };
 
 
