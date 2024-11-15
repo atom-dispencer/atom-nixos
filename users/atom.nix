@@ -1,14 +1,16 @@
-{ config, pkgs, home-manager, ... }: {
+{ config, pkgs, args, ... }: let
+  hm = args.home-manager;
+in {
   
   imports = [
-    args.home-manager.nixosModules.default
+    hm.nixosModules.default
   ];
 
-  home-manager.extraSpecialArgs = { inherit args; };
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
+  hm.extraSpecialArgs = { inherit args; };
+  hm.useGlobalPkgs = true;
+  hm.useUserPackages = true;
 
-  home-manager.users.atom = let
+  hm.users.atom = let
     username = "atom";
   in {
     home.username = username;
