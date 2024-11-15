@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ args: let
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ moduleargs: let
     inherit (self) outputs;
   in {
     
