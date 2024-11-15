@@ -51,7 +51,7 @@
       # Generic user
       "atom@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit args outputs; };
+        extraSpecialArgs = { inherit moduleargs outputs; };
         modules = [./users/atom.nix];
       };
 
