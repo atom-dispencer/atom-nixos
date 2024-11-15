@@ -34,7 +34,7 @@
       # Default system configuration (WSL)
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit moduleargs; };
-        system = "x86_64-linux";
+        system = "x86_64-linux"; # Henceforth, nixpkgs is automagically available as 'pkgs'
         modules = [
           ./system/system.nix
           nixos-wsl.nixosModules.wsl
