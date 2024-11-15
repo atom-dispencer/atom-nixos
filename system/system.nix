@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ lib, moduleargs, nixpkgs, ... }:
+{ lib, moduleargs, ... }:
 
 {
 
@@ -18,7 +18,7 @@
     "nix-command"
     "flakes"
   ];
-  environment.systemPackages = with nixpkgs; [
+  environment.systemPackages = with moduleargs.nixpkgs; [
     git
     wget
     curl
