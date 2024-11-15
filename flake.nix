@@ -33,7 +33,7 @@
 
       # Default system configuration (WSL)
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit args; };
+        specialArgs = { inherit moduleargs; };
         system = "x86_64-linux";
         modules = [
           ./system/system.nix
