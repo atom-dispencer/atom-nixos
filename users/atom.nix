@@ -19,5 +19,5 @@
 
       programs = import ./programs;
     };
-  }
+  };
 }
