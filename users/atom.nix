@@ -1,25 +1,23 @@
-{ config, pkgs, args, ... }: let
-  hm = args.home-manager;
-in {
+{ config, pkgs, args, ... }: {
   
   imports = [
-    hm.nixosModules.default
+    args.home-manager.nixosModules.default
   ];
 
-  hm.extraSpecialArgs = { inherit args; };
-  hm.useGlobalPkgs = true;
-  hm.useUserPackages = true;
+  home-manager = {
+    extraSpecialArgs = { inherit args; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
-  hm.users.atom = let
-    username = "atom";
-  in {
-    home.username = username;
-    home.homeDirectory = "/home/${username}";
-    home.stateVersion = "24.05";
+    users.atom = {
+      home.username = "atom";
+      home.homeDirectory = "/home/atom/";
+      home.stateVersion = "24.05";
 
-    home.packages = with pkgs; [
-    ];
+      home.packages = with pkgs; [
+      ];
 
-    programs = import ./programs;
-  };
+      programs = import ./programs;
+    };
+  }
 }
