@@ -32,13 +32,19 @@
         system = "x86_64-linux";
         modules = [
           ./system/system.nix
-          ./users/atom.nix
           nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.default
         ];
       };
 
       # Another configuration could go here :)
+    };
+
+    homeConfigurations = {
+      "atom@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit args outputs; };
+        modules = [./users/atom.nix];
+      };
     };
   };
 }

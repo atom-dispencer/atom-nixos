@@ -20,9 +20,9 @@
 
       home.packages = with moduleargs.nixpkgs; [
       ];
-    programs = import ./programs;
-
     };
+
+    programs = import ./programs;
 
   };
 }
