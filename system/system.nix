@@ -18,7 +18,7 @@
     "nix-command"
     "flakes"
   ];
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with moduleargs.nixpkgs; [
     git
     wget
     curl
