@@ -18,7 +18,7 @@
       home.homeDirectory = "/home/atom/";
       home.stateVersion = "24.05";
 
-      home.packages = with pkgs; [
+      home.packages = with moduleargs.nixpkgs; [
       ];
     programs = import ./programs;
 
