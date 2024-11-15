@@ -21,12 +21,15 @@
     inherit (self) outputs;
   in {
     
-    # nixos here is the default name
-    # I only have one config so it doesnt matter
-    # Could be changed to .atom-nix, but would need to use:
-    #   nixos-rebuild switch --flake .#atom-nix
-
+    #
+    # System (NixOS) configuration
+    #
     nixosConfigurations = {
+
+      # nixos here is the default name
+      # I only have one config so it doesnt matter
+      # Could be changed to .atom-nix, but would need to use:
+      #   nixos-rebuild switch --flake .#atom-nix
 
       # Default system configuration (WSL)
       nixos = nixpkgs.lib.nixosSystem {
@@ -37,16 +40,21 @@
           nixos-wsl.nixosModules.wsl
         ];
       };
-
-      # Another configuration could go here :)
     };
 
+
+    #
+    # Home-manager configuration
+    #
     homeConfigurations = {
+
+      # Generic user
       "atom@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit args outputs; };
         modules = [./users/atom.nix];
       };
+
     };
   };
 }
