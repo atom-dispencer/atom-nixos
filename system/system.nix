@@ -11,7 +11,7 @@
 
   # wsl comes from flake import
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "atom";
 
   # Enable required features and the utilities they require
   nix.settings.experimental-features = [
@@ -24,14 +24,13 @@
     curl
   ];
 
-  # security.sudo.wheelNeedsPassword = true;
-
   users.mutableUsers = false;
   users.users.atom = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     password = "atom";
   };
+  security.sudo.wheelNeedsPassword = true;
 
 
   # This value determines the NixOS release from which the default
