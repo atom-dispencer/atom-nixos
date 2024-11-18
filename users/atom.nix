@@ -1,6 +1,6 @@
 { 
   config,     # The whole config so far
-  nixpkgs,
+  pkgs,
   inputs,     # Input map from flake.nix, contains nixpkgs home-manager modules etc.
   ...         # The contents of moduleargs, unpacked
 }: {
