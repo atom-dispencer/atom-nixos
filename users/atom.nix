@@ -1,5 +1,6 @@
 { 
   config,     # The whole config so far
+  nixpkgs,
   home-manager,
   inputs,     # Input map from flake.nix, contains nixpkgs home-manager modules etc.
   ...         # The contents of moduleargs, unpacked
@@ -22,7 +23,7 @@
       home.homeDirectory = "/home/atom/";
       home.stateVersion = "24.05";
 
-      home.packages = with moduleargs.nixpkgs; [
+      home.packages = with nixpkgs; [
       ];
     };
 
