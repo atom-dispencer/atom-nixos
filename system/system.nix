@@ -22,6 +22,7 @@
     git
     wget
     curl
+    home-manager
   ];
 
   users.mutableUsers = false;
