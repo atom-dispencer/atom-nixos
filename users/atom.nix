@@ -1,8 +1,6 @@
 { 
-  config,     # The whole config so far
   pkgs,
-  inputs,     # Input map from flake.nix, contains nixpkgs home-manager modules etc.
-  ...         # The contents of moduleargs, unpacked
+  ...
 }: {
 
   home.username = "atom";

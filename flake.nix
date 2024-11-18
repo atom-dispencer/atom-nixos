@@ -37,10 +37,10 @@
         system = "x86_64-linux"; # Henceforth, nixpkgs is automagically available as 'pkgs'
         modules = [
           nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.home-manager
           ./system/system.nix
           ./users/atom.nix
 
-          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
