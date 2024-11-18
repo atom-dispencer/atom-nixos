@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ moduleargs: let
+  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ inputs: let
     inherit (self) outputs;
   in {
     
@@ -33,28 +33,14 @@
 
       # Default system configuration (WSL)
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit moduleargs; };
+        specialArgs = { inherit inputs outputs; };
         system = "x86_64-linux"; # Henceforth, nixpkgs is automagically available as 'pkgs'
         modules = [
-          ./system/system.nix
           nixos-wsl.nixosModules.wsl
+          ./system/system.nix
+          ./users/atom.nix
         ];
       };
-    };
-
-
-    #
-    # Home-manager configuration
-    #
-    homeConfigurations = {
-
-      # Generic user
-      "atom@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit moduleargs outputs; };
-        modules = [./users/atom.nix];
-      };
-
     };
   };
 }
