@@ -39,6 +39,13 @@
           nixos-wsl.nixosModules.wsl
           ./system/system.nix
           ./users/atom.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.atom = import ./users/atom.nix
+          }
         ];
       };
     };

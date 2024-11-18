@@ -1,52 +1,17 @@
 { 
   config,     # The whole config so far
   nixpkgs,
-  home-manager,
   inputs,     # Input map from flake.nix, contains nixpkgs home-manager modules etc.
   ...         # The contents of moduleargs, unpacked
 }: {
-  
-  imports = [
-    home-manager.nixosModules.default
-  ];
 
-  #
-  #
-  #
-  home-manager = {
+  home.username = "atom";
+  home.homeDirectory = "/home/atom";
 
-    #
-    # User configuration
-    #
-    users.atom = {
-      home.username = "atom";
-      home.homeDirectory = "/home/atom/";
-      home.stateVersion = "24.05";
+  programs.fish = {
+    enable = true;
+  }
 
-      home.packages = with nixpkgs; [
-      ];
-    };
-
-    #
-    # Home Manager configuration
-    #
-    home = {
-      extraSpecialArgs = { inherit inputs; };
-      useGlobalPkgs = true;
-      useUserPackages = true;
-
-      #file = {};
-      #packages = {};
-    };
-
-    #
-    # Program configuration
-    #
-    programs = {
-      home-manager.enable = true;
-      git.enable = true;
-      fish.enable = true;
-      nixvim.enable = true;
-    };
-  };
+  home.stateVersion = "24.05";
+  programs.home-manager.enable = true;
 }
