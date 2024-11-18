@@ -22,7 +22,7 @@
       ];
     };
 
-    programs = import ./programs;
+
 
   };
 }

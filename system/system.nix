@@ -22,7 +22,7 @@
     git
     wget
     curl
-    home-manager
+    #home-manager
   ];
 
   users.mutableUsers = false;
@@ -32,6 +32,12 @@
     password = "atom";
   };
   security.sudo.wheelNeedsPassword = true;
+
+  #programs = import ./programs;
+  programs = {
+    home-manager.enable = true;
+  };
+
 
 
   # This value determines the NixOS release from which the default
