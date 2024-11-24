@@ -35,7 +35,7 @@
         # Blue current directory
         PROMPT+="%{$fg[blue]%}%c%{$reset_color%} "
         # Git info
-        PROMPT+="$(git_prompt_info)"
+        PROMPT+="$(_omz_git_prompt_info)"
       '';
 
       oh-my-zsh = {
