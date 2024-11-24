@@ -30,6 +30,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     password = "atom";
+    shell = pkgs.fish;
   };
   security.sudo.wheelNeedsPassword = true;
 
