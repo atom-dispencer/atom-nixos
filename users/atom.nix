@@ -3,8 +3,14 @@
   ...
 }: {
 
-  home.username = "atom";
-  home.homeDirectory = "/home/atom";
+  home = {
+    username = "atom";
+    homeDirectory = "/home/atom";
+    
+    packages = with pkgs; {
+      oh-my-zsh
+    };
+  };
 
   programs = {
     home-manager.enable = true;
