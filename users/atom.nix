@@ -17,12 +17,12 @@
 
     zsh = {
       enable = true;
-    };
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [];
-      theme = "agnoster";
+      oh-my-zsh = {
+        enable = true;
+        plugins = [];
+        theme = "agnoster";
+      };
     };
   };
 
