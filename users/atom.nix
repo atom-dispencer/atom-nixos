@@ -20,7 +20,7 @@
       enableAutosuggestions = true;
       syntaxHighlighting.enable = true;
 
-      ohMyZsh = {
+      oh-my-zsh = {
         enable = true;
         plugins = [];
         theme = "cloud";
