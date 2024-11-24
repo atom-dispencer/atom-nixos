@@ -17,13 +17,17 @@
 
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      #autosuggestion?
+      autoSuggestion.enable = true;
       syntaxHighlighting.enable = true;
+
+      promptInit = ''PROMPT=boop''
 
       oh-my-zsh = {
         enable = true;
-        plugins = [];
-        theme = "cloud";
+        plugins = [
+          "git"
+        ];
       };
     };
   };
