@@ -24,7 +24,8 @@
     curl
     #home-manager
   ];
-
+  
+  security.sudo.wheelNeedsPassword = true;
   users.mutableUsers = false;
   users.users.atom = {
     isNormalUser = true;
@@ -32,7 +33,9 @@
     password = "atom";
     shell = pkgs.fish;
   };
-  security.sudo.wheelNeedsPassword = true;
+  # Must be enabled here as well to set the default shell
+  programs.fish.enable = true;
+
 
 
   # This value determines the NixOS release from which the default
