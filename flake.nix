@@ -45,12 +45,12 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; }
+              extraSpecialArgs = { inherit inputs; };
               users.atom = {
                 imports = [
                   ./users/atom.nix
-                ]
-              }
+                ];
+              };
             }
           }
         ];
