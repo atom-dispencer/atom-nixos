@@ -42,9 +42,16 @@
           ./users/atom.nix
 
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.atom = import ./users/atom.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; }
+              users.atom = {
+                imports = [
+                  ./users/atom.nix
+                ]
+              }
+            }
           }
         ];
       };
