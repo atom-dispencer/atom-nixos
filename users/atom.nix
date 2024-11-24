@@ -20,7 +20,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      promptInit = ''PROMPT=boop'';
+      initPrompt = ''PROMPT=boop'';
 
       oh-my-zsh = {
         enable = true;
