@@ -39,7 +39,6 @@
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
           ./system/system.nix
-          ./users/atom.nix
 
           {
             home-manager = {
