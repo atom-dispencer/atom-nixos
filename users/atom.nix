@@ -42,6 +42,7 @@
         enable = true;
         plugins = [
           "git"
+          "git-prompt"
         ];
       };
     };
