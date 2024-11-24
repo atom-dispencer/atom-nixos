@@ -17,17 +17,20 @@
 
     zsh = {
       enable = true;
-      autosuggestion.enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
 
-      promptInit = ''PROMPT=boop > '';
+      initExtra = ''
+        PROMPT=boop > 
+      '';
 
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "git"
-        ];
-      };
+      #oh-my-zsh = {
+      #  enable = true;
+      #  plugins = [
+      #    "git"
+      #  ];
+      #};
     };
   };
 
