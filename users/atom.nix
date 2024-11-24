@@ -7,9 +7,9 @@
     username = "atom";
     homeDirectory = "/home/atom";
     
-    packages = with pkgs; {
+    packages = with pkgs; [
       oh-my-zsh
-    };
+    ];
   };
 
   programs = {
