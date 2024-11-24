@@ -34,7 +34,7 @@
         PROMPT+="%{$fg[white]%}%n%{$reset_color%} "
         # Blue current directory
         PROMPT+="%{$fg[blue]%}%c%{$reset_color%} "
-        # Git info
+        # Git info (MUST be single ' quotes to make it a STRING and NOT evaluate it now)
         PROMPT+='$(_omz_git_prompt_info)'
       '';
 
