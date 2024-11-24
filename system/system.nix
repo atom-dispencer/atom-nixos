@@ -31,10 +31,10 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     password = "atom";
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
   # Must be enabled here as well to set the default shell
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
 
 

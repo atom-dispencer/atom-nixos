@@ -6,7 +6,7 @@
   home.username = "atom";
   home.homeDirectory = "/home/atom";
 
-  programs.fish = {
+  programs.zsh = {
     enable = true;
   };
 
