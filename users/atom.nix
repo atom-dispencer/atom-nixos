@@ -17,8 +17,7 @@
 
     zsh = {
       enable = true;
-      #autosuggestion?
-      autoSuggestion.enable = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
       promptInit = ''PROMPT=boop'';
