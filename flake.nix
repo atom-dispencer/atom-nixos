@@ -38,7 +38,7 @@
         modules = [
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
-          nixvim.homeManagerModules.nixvim
+          #nixvim.homeManagerModules.nixvim
           ./system/system.nix
 
           {
