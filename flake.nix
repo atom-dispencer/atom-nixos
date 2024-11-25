@@ -38,7 +38,6 @@
         modules = [
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
-          #nixvim.homeManagerModules.nixvim
           ./system/system.nix
 
           {
@@ -46,6 +45,9 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
               users.atom = {
                 imports = [
                   ./users/atom.nix
