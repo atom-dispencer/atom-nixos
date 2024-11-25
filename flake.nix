@@ -10,14 +10,9 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixos-wsl, ... } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... } @ inputs: let
     inherit (self) outputs;
   in {
     
@@ -45,9 +40,6 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
-              sharedModules = [
-                nixvim.homeManagerModules.nixvim
-              ];
               users.atom = {
                 imports = [
                   ./users/atom.nix

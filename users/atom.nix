@@ -1,6 +1,5 @@
 { 
   pkgs,
-  nixvim,
   ...
 }: {
 
@@ -48,7 +47,7 @@
       };
     };
 
-    nixvim = {
+    neovim = {
       enable = true;
     };
   };
