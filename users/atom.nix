@@ -48,9 +48,9 @@
       };
     };
 
-    nixvim = {
-      enable = true;
-    };
+    #nixvim = {
+    #  enable = true;
+    #};
   };
 
   home.stateVersion = "24.05";
