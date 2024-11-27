@@ -1,0 +1,3 @@
+[submodule "users/programs/nvim/atom-nvim"]
+	path = users/programs/nvim/atom-nvim
+	url = https://github.com/atom-dispencer/atom-nvim.git
