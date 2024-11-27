@@ -1,9 +1,9 @@
 { pkgs, ... }: {
 
   imports = [
-    ./fish.nix
-    ./git.nix
-    ./nvim
+    #./fish.nix
+    #./git.nix
+    #./nvim
   ];
   
   home-manager.enable = true;
