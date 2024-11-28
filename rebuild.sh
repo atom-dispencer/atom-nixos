@@ -1,4 +1,5 @@
 echo "  Fetching Git repository..."
+git reset --hard HEAD
 git pull
 
 
