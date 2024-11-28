@@ -9,7 +9,7 @@ echo "  Rebuilding NixOS..."
 sudo nixos-rebuild switch --impure --flake .\?submodules=1
 
 echo "  Deploying Neovim config..." 
-$NVIM_CONFIG="~/.config/nvim"
+NVIM_CONFIG="~/.config/nvim"
 if [ ! -d $NVIM_CONFIG ]; then
   mkdir $NVIM_CONFIG -p
 fi
