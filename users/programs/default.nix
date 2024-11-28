@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ 
+  nixpkgs-unstable,
+  ... 
+}: {
 
   imports = [
     ./git.nix
