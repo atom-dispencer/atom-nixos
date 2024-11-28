@@ -11,7 +11,7 @@
   };
 
   home.file.".config/nvim" = {
-    source = ./atom-nvim;
+    source = config.lib.file.mkOutOfStoreSymlink ./atom-nvim;
     recursive = true;
   };
 }
