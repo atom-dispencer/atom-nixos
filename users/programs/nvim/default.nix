@@ -11,7 +11,9 @@
   };
 
   home.file.".config/nvim" = {
-    source = ./atom-nvim;
+    source = builtins.path { 
+      path = ./atom-nvim;
+    };
     recursive = true;
   };
 }
