@@ -13,6 +13,10 @@
     homeDirectory = "/home/atom";
     
     packages = with pkgs; [
+      # Core tooling
+      clang
+
+      # Shell
       oh-my-zsh
     ];
   };
