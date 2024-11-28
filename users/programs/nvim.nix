@@ -13,7 +13,7 @@
   home.file.".config/nvim" = {
     source = builtins.fetchGit {
       url = "git@github.com:atom-dispencer/atom-nvim.git";
-      rev = "HEAD";
+      rev = "411bc1c68351bb059ce0b33e17309dba7c9d0263";
     };
   };
 }
