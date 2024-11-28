@@ -9,6 +9,10 @@ git add . -A
 
 echo "  Rebuilding NixOS..."
 sudo nixos-rebuild switch --impure --flake .\?submodules=1
+if [ ! $? -eq 0 ]; then
+echo "  Failed to rebuild NixOS!"
+  exit 1
+fi
 
 
 echo "  Deploying Neovim config..." 
