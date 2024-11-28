@@ -3,8 +3,8 @@
   description = "Core flake for atom-nixos";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
@@ -16,7 +16,6 @@
   outputs = { 
     self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     nixos-wsl,
     ... 
