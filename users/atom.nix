@@ -16,15 +16,16 @@
       # Core tooling
       gcc
 
-      # Languages
+      # Lua
+      luarocks-nix
+      # Python
       python313
+      # JS
       nodejs_22
+      # Haskell
       ghc
-      stack
       cabal-install
       haskell-language-server
-      haskell-debug-adapter
-      luarocks-nix
 
       # Shell
       oh-my-zsh
