@@ -23,6 +23,7 @@
       stack
       cabal-install
       haskell-language-server
+      haskell-debug-adapter
       luarocks-nix
 
       # Shell
