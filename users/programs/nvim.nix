@@ -4,6 +4,5 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    package = inputs.neovim-nightly-overlay.packages.${builtins.currentSystem};
   };
 }
