@@ -12,6 +12,6 @@ sudo nixos-rebuild switch --impure --flake .\?submodules=1
 
 
 echo "  Deploying Neovim config..." 
-NVIM_CONFIG='~/.config/nvim'
+NVIM_CONFIG=~/.config/nvim
 rm "$NVIM_CONFIG" -rf
 git clone https://github.com/atom-dispencer/atom-nvim.git "$NVIM_CONFIG"
