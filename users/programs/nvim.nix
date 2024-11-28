@@ -1,4 +1,8 @@
-{ nixpkgs-unstable, pkgs, ... }: {
+{ 
+  nixpkgs-unstable,
+  pkgs, 
+  ...
+}: {
 
   programs.neovim = {
     enable = true;
