@@ -4,10 +4,6 @@
   ...
 }: {
 
-  nixpkgs.overlays = [
-    inputs.neovim-nightly-overlay.overlay
-  ];
-
   imports = [
     ./programs
   ];
