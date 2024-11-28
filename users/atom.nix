@@ -22,6 +22,7 @@
       ghc
       stack
       cabal-install
+      haskell-language-server
       luarocks-nix
 
       # Shell
