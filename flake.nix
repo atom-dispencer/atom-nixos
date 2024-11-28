@@ -4,6 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nikpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
     home-manager = {
@@ -14,7 +15,14 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... } @ inputs: let
+  outputs = { 
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nixos-wsl,
+    ... 
+  } @ inputs: let
     inherit (self) outputs;
   in {
     
