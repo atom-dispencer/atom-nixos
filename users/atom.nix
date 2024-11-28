@@ -20,6 +20,8 @@
       python313
       nodejs_22
       ghc
+      stack
+      haskell-language-server
       cabal-install
       luarocks-nix
 
