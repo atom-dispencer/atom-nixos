@@ -21,6 +21,7 @@
       nodejs_22
       ghc
       cabal-install
+      luarocks-nix
 
       # Shell
       oh-my-zsh
