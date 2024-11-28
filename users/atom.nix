@@ -14,7 +14,7 @@
     
     packages = with pkgs; [
       # Core tooling
-      clang
+      gcc
 
       # Languages
       python313

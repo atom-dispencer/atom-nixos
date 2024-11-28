@@ -22,7 +22,7 @@
     git
     wget
     curl
-    #home-manager
+    unzip
   ];
   
   security.sudo.wheelNeedsPassword = true;
