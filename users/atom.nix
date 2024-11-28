@@ -21,7 +21,7 @@
       nodejs_22
       ghc
       stack
-      haskell-language-server
+      ghcup
       cabal-install
       luarocks-nix
 
