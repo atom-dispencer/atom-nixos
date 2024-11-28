@@ -16,6 +16,12 @@
       # Core tooling
       clang
 
+      # Languages
+      python313
+      nodejs_22
+      ghc
+      cabal-install
+
       # Shell
       oh-my-zsh
     ];
