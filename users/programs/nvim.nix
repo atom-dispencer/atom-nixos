@@ -15,9 +15,5 @@
       url = "git@github.com:atom-dispencer/atom-nvim.git";
       rev = "HEAD";
     };
-
-
-    config.lib.file.mkOutOfStoreSymlink ./atom-nvim;
-    recursive = true;
   };
 }
