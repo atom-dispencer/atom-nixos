@@ -16,19 +16,21 @@
       # Core tooling
       gcc
 
-      # Lua
-      luarocks-nix
-      # Python
-      python313
-      # JS
-      nodejs_22
+      # Shell environment
+      oh-my-zsh
+
       # Haskell
       ghc
       cabal-install
       haskell-language-server
-
-      # Shell
-      oh-my-zsh
+      # JS
+      nodejs_22
+      # Lua
+      luarocks-nix
+      # Matlab
+      matlab-language-server
+      # Python
+      python313
     ];
   };
 
