@@ -6,6 +6,10 @@
       syntaxHighlighting.enable = true;
 
       initExtra = ''
+        #
+        # Prompt
+        #
+
         # Git prompt configuration
         ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
         ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
@@ -20,6 +24,11 @@
         PROMPT+="%{$fg[blue]%}%c%{$reset_color%} "
         # Git info (MUST be single ' quotes to make it a STRING and NOT evaluate it now)
         PROMPT+='$(_omz_git_prompt_info)'
+
+        #
+        # Neofetch
+        #
+        neofetch
       '';
 
       oh-my-zsh = {

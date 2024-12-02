@@ -18,6 +18,7 @@
 
       # Shell environment
       oh-my-zsh
+      neofetch
 
       # Haskell
       ghc
