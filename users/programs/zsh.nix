@@ -29,6 +29,12 @@
         # Neofetch
         #
         neofetch
+
+        #
+        # SSH
+        #
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/github_atom-nixos
       '';
 
       oh-my-zsh = {
