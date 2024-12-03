@@ -11,6 +11,8 @@
   home = {
     username = "atom";
     homeDirectory = "/home/atom";
+
+    # ~ twiddlin my thumbs ~
     
     packages = with pkgs; [
       # Shell environment
