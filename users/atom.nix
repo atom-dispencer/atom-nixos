@@ -13,9 +13,6 @@
     homeDirectory = "/home/atom";
     
     packages = with pkgs; [
-      # Core tooling
-      gcc
-
       # Shell environment
       oh-my-zsh
       neofetch

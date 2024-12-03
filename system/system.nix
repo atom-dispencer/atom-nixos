@@ -23,6 +23,8 @@
     wget
     curl
     unzip
+    gcc
+    clang
   ];
   
   security.sudo.wheelNeedsPassword = true;
