@@ -25,6 +25,7 @@
     unzip
     gcc
     clang
+    llvmPackages_19.clang-tools
   ];
   
   security.sudo.wheelNeedsPassword = true;
