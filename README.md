@@ -3,6 +3,9 @@ Install NixOS-WSL:
 wsl.....
 ```
 
+After cloning, the first thing you should do is set up Git.
+The SSH identity '~/.ssh/github_atom-nixos' is automatically used for GitHub authentication and key signing.
+
 Image
 
 Clone the GitHub image:
