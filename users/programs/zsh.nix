@@ -5,6 +5,11 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
+      completionInit = ''
+        # Use tab to complete commands
+        bindkey '	' autosuggest-accept
+      '';
+
       initExtra = ''
         #
         # Prompt
