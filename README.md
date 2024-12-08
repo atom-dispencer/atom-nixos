@@ -50,3 +50,9 @@ sudo chown atom /home/atom/ -R
 # Just restart NixOS so that all sessions are logged out.
 wsl --terminate NixOS
 ```
+
+## Couldn't find GPG key for git commits?
+You're not using GPG, you're using SSH. This might be in configuration, but if not:
+```
+git config gpg.format ssh
+```
