@@ -1,27 +1,25 @@
+# Installation
+
 Install NixOS-WSL:
 ```ps1
-wsl.....
+# Enable WSL2
+wsl --install --no-distribution
+
+# Download and install NixOS-WSL
+Invoke-WebRequest "https://github.com/nix-community/NixOS-WSL/releases/download/2405.5.4/nixos-wsl.tar.gz" -OutFile "nixos-wsl.tar.gz"
+wsl --import NixOS $env:USERPROFILE\NixOS\ nixos-wsl.tar.gz --version 2
+```
+
+Clone the GitHub image:
+```sh
+nix-shell -p git        # Open an ephemeral shell with Git
+cd /home/atom/          # ...or whereever you want your config to be
+sudo git clone https://github.com/atom-dispencer/atom-nixos .
+./rebuild.sh            # Activate the new configuration
 ```
 
 After cloning, the first thing you should do is set up Git.
 The SSH identity '~/.ssh/github_atom-nixos' is automatically used for GitHub authentication and key signing.
-
-Image
-
-Clone the GitHub image:
-```sh
-# Open an ephemeral shell with Git
-cd /etc/nixos/
-nix-shell -p git
-
-# Replace the old configuration with the new
-sudo rm configuration.nix
-sudo git clone https://github.com/atom-dispencer/atom-nixos .
-
-# Activate the new configuration
-sudo nixos-rebuild switch
-```
-
 
 # Common Errors
 
