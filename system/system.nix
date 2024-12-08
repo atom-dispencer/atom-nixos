@@ -5,8 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ lib, pkgs, ... }:
-
+{ 
+  lib, 
+  pkgs, 
+  inputs,
+  ... 
+}:
 {
 
   # wsl comes from flake import
@@ -29,16 +33,39 @@
   ];
   
   security.sudo.wheelNeedsPassword = true;
-  users.mutableUsers = false;
-  users.users.atom = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    password = "atom";
-    shell = pkgs.zsh;
-  };
-  # Must be enabled here as well to set the default shell
-  programs.zsh.enable = true;
 
+  users = {
+    mutableUsers = false;
+    users.atom = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" ];
+      password = "atom";
+      shell = pkgs.zsh;
+    };
+  };
+
+  programs = {
+    zsh.enable = true;
+
+    nix-ld.dev = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        zlib 
+      ];
+    };
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.atom = {
+      imports = [
+        ../users/atom.nix
+      ];
+    };
+  };
 
 
   # This value determines the NixOS release from which the default

@@ -40,6 +40,14 @@
         #
         eval "$(ssh-agent -s)"
         ssh-add ~/.ssh/github_atom-nixos
+
+        #
+        # Python
+        # nix-ld
+        # This apparently might cause issues with other libraries, but we'll deal with that later
+        # https://github.com/mcdonc/.nixconfig/blob/e7885ad18b7980f221e59a21c91b8eb02795b541/videos/pydev/script.rst
+        #
+        export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
       '';
 
       oh-my-zsh = {

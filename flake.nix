@@ -7,6 +7,11 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,6 +23,7 @@
     nixpkgs,
     home-manager,
     nixos-wsl,
+    nix-ld,
     ... 
   } @ inputs: let
     inherit (self) outputs;
@@ -40,20 +46,8 @@
         modules = [
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
+          nix-ld.nixosModules.nix-ld
           ./system/system.nix
-
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.atom = {
-                imports = [
-                  ./users/atom.nix
-                ];
-              };
-            };
-          }
         ];
       };
     };

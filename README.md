@@ -44,3 +44,9 @@ Take ownership of home directory
 ```
 sudo chown atom /home/atom/ -R
 ```
+
+## Couldn't connect to dbus (Connection refused)
+```
+# Just restart NixOS so that all sessions are logged out.
+wsl --terminate NixOS
+```
