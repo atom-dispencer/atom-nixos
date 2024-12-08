@@ -21,6 +21,11 @@ sudo git clone https://github.com/atom-dispencer/atom-nixos .
 After cloning, the first thing you should do is set up Git.
 The SSH identity '~/.ssh/github_atom-nixos' is automatically used for GitHub authentication and key signing.
 
+Now if you have SSH keys and have write permissions for the repo (like me):
+```
+git remote set-url origin git@github.com:atom-dispencer/atom-nixos
+```
+
 # Common Errors
 
 ## Failed to start home manager for atom (home-manager.lock permission denied)
