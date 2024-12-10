@@ -25,6 +25,8 @@
       haskell-language-server
       # JS
       nodejs_22
+      # Julia
+      julia_19-bin
       # Lua
       luarocks-nix
       # Matlab
