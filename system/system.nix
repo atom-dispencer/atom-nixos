@@ -29,7 +29,7 @@
     unzip
     gcc
     clang
-    make
+    gnumake
     llvmPackages_19.clang-tools
   ];
   
