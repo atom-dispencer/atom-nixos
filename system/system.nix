@@ -31,6 +31,7 @@
     clang
     gnumake
     llvmPackages_19.clang-tools
+    file
   ];
   
   security.sudo.wheelNeedsPassword = true;
