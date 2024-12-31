@@ -21,7 +21,7 @@
         ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}%1{💔%}"
         ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}) %{$fg[yellow]%}%1{💜%}"
 
-        # Green/Red arrow if the last command succeeded/failed
+        # Change atom colour if the last command succeeded/failed
         PROMPT="%(?:%{$fg_bold[magenta]%}%1{%} :%{$fg_bold[red]%}%1{%} ) "
         # User in white
         PROMPT+="%{$fg[white]%}%n%{$reset_color%} "
@@ -29,6 +29,7 @@
         PROMPT+="%{$fg[blue]%}%c%{$reset_color%} "
         # Git info (MUST be single ' quotes to make it a STRING and NOT evaluate it now)
         PROMPT+='$(_omz_git_prompt_info)'
+        RPROMPT=""
 
         #
         # Neofetch
