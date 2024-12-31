@@ -29,6 +29,7 @@
         PROMPT+="%{$fg[blue]%}%c%{$reset_color%} "
         # Git info (MUST be single ' quotes to make it a STRING and NOT evaluate it now)
         PROMPT+='$(_omz_git_prompt_info)'
+        # Remove the janky right-hand-side git prompt made automagically by oh-my-zsh
         RPROMPT=""
 
         #
