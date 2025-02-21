@@ -33,11 +33,6 @@
         RPROMPT=""
 
         #
-        # Neofetch
-        #
-        neofetch
-
-        #
         # SSH
         #
         eval "$(ssh-agent -s)"
