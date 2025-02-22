@@ -8,7 +8,7 @@ function is_git_repo() {
 }
 
 function prompt_atom() {
-  local last_exit_code = $1
+  local last_exit_code=$1
 
   if [[ $? == 0 ]]; then
     PROMPT_ATOM="%{$fg_bold[blue]%}"
