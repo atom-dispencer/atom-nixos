@@ -11,14 +11,14 @@ function prompt_atom() {
   local last_exit_code=$1
 
   if [[ $last_exit_code == 0 ]]; then
-    PROMPT_ATOM="%F{#0000ff)  $last_exit_code "
-  else
     PROMPT_ATOM="%F{#00ff00}  $last_exit_code "
+  else
+    PROMPT_ATOM="%F{#ff0000}  $last_exit_code "
   fi
 }
 
 function prompt_dirname() {
-  PROMPT_DIRNAME="${PWD##*/} "
+  PROMPT_DIRNAME="%F{#909090}${PWD##*/} "
 }
 
 function prompt_branch() {
@@ -26,9 +26,9 @@ function prompt_branch() {
     local branch="$(git branch --show-current)"
 
     if [[ -n $branch ]]; then
-      PROMPT_BRANCH=" $branch "
+      PROMPT_BRANCH="%F{#009090} $branch "
     else
-      PROMPT_BRANCH=" DETACHED "  # Handle detached HEAD
+      PROMPT_BRANCH="%F{#ff0000} DETACHED "  # Handle detached HEAD
     fi
   else
     PROMPT_BRANCH=""
@@ -59,7 +59,7 @@ function update_prompt() {
   prompt_dirname
   prompt_branch
   prompt_status
-  PROMPT="$PROMPT_ATOM$PROMPT_DIRNAME$PROMPT_BRANCH$PROMPT_STATUS"
+  PROMPT="$PROMPT_ATOM$PROMPT_DIRNAME$PROMPT_BRANCH$PROMPT_STATUS%f"
 }
 
 autoload -Uz add-zsh-hook
