@@ -22,7 +22,7 @@ function prompt_atom() {
 }
 
 function prompt_dirname() {
-  PROMPT_DIRNAME="%{$fg_bold[blue]%}${PWD##*/}%{$reset_color%} "
+  PROMPT_DIRNAME="${PWD##*/} "
 }
 
 function prompt_branch() {
@@ -30,9 +30,9 @@ function prompt_branch() {
     local branch="$(git branch --show-current)"
 
     if [[ -n $branch ]]; then
-      PROMPT_BRANCH="%{$fg_bold[yellow]%} $branch%{$reset_color%} "
+      PROMPT_BRANCH=" $branch "
     else
-      PROMPT_BRANCH="%{$fg_bold[red]%} DETACHED%{$reset_color%} "  # Handle detached HEAD
+      PROMPT_BRANCH=" DETACHED "  # Handle detached HEAD
     fi
   else
     PROMPT_BRANCH=""
