@@ -2,6 +2,7 @@
 #
 # ZSH Prompt
 #
+#
 
 function is_git_repo() {
   git rev-parse --is-inside-work-tree &>/dev/null
