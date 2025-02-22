@@ -62,6 +62,7 @@ function update_prompt() {
   PROMPT="$PROMPT_ATOM$PROMPT_DIRNAME$PROMPT_BRANCH$PROMPT_STATUS%{$reset_color%}"
 }
 
+autoload -U colors && colors
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_prompt
 
