@@ -36,11 +36,11 @@ function prompt_branch() {
 
 function prompt_status() {
   # Unstaged changes?
-  if $(git diff-index --quiet --cached HEAD --); then
+  if $(git diff-index --quiet --cached HEAD -- &>/dev/null); then
     echo "💔"
 
   # Staged changes?
-  elif $(git diff-files --quiet); then
+  elif $(git diff-files --quiet &>/dev/null); then
     echo "🧡"
 
   # No changes
@@ -53,7 +53,7 @@ function generate_prompt() {
   echo "$(prompt_atom)  $(prompt_dirname) $(prompt_branch) $(prompt_status) %{$reset_color%} "
 }
 
-PROMPT='$(generate_prompt)'
+PROMPT="$(generate_prompt)"
 
 
 
