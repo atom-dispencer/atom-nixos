@@ -10,13 +10,13 @@ function is_git_repo() {
 function prompt_atom() {
   local last_exit_code=$1
 
-  if [[ $? == 0 ]]; then
+  if [[ $last_exit_code == 0 ]]; then
     PROMPT_ATOM="%{$fg_bold[blue]%}"
   else
     PROMPT_ATOM="%{$fg_bold[magenta]%}"
   fi
 
-  PROMPT_ATOM+="  $? "
+  PROMPT_ATOM+="  $last_exit_code "
   PROMPT_ATOM+="%{$reset_color}"
 }
 
@@ -37,6 +37,10 @@ function prompt_branch() {
 }
 
 function prompt_status() {
+  if ! is_git_repo; then
+    return 0
+  fi
+
   if [[ -n $(git status --porcelain --untracked-files) ]]; then
     PROMPT_STATUS="💔"  # Untracked files
   elif ! git diff --quiet 2>/dev/null; then
