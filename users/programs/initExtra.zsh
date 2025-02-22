@@ -8,49 +8,54 @@ function is_git_repo() {
 }
 
 function prompt_atom() {
+  PROMPT_ATOM=""
   if $?; then
-    echo "%{$fg_bold[blue]%}"
+    PROMPT_ATOM+="%{$fg_bold[blue]%}"
   else
-    echo "%{$fg_bold[magenta]%}"
+    PROMPT_ATOM+="%{$fg_bold[magenta]%}"
   fi
 
-  echo "  $? "
-  echo "%{$reset_color}"
+  PROMPT_ATOM+="  $? "
+  PROMPT_ATOM+="%{$reset_color}"
 }
 
 function prompt_dirname() {
-  echo "%{$fg_bold[blue]%}"
-  echo '${PWD##*/}'
-  echo "%{$reset_color}"
+  PROMPT_DIRNAME="%{$fg_bold[blue]%}"
+  PROMPT_DIRNAME+="${PWD##*/}"
+  PROMPT_DIRNAME+"%{$reset_color}"
 }
 
 function prompt_branch() {
-  echo "%{$fg_bold[blue]%}"
+  PROMPT_BRANCH="%{$fg_bold[blue]%}"
 
   if is_git_repo; then
     git branch --show-current
   fi
 
-  echo "%{$reset_color}"
+  PROMPT_BRANCH+="%{$reset_color}"
 }
 
 function prompt_status() {
   # Unstaged changes?
   if $(git diff-index --quiet --cached HEAD -- &>/dev/null); then
-    echo "💔"
+    PROMPT_STATUS="💔"
 
   # Staged changes?
   elif $(git diff-files --quiet &>/dev/null); then
-    echo "🧡"
+    PROMPT_STATUS="🧡"
 
   # No changes
   else
-    echo "💜"
+    PROMPT_STATUS="💜"
   fi
 }
 
 function generate_prompt() {
-  echo "$(prompt_atom)  $(prompt_dirname) $(prompt_branch) $(prompt_status) %{$reset_color%} "
+  prompt_atom()
+  prompt_dirname() 
+  prompt_branch()
+  prompt_status()
+  echo "$PROMPT_ATOM $PROMPT_DIRNAME $PROMPT_BRANCH $PROMPT_STATUS %{$reset_color%}"
 }
 
 PROMPT="$(generate_prompt)"
