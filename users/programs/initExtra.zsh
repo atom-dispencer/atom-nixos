@@ -3,9 +3,9 @@
 # ZSH Prompt
 #
 
-PROMPT_BLUE="%{\\e[38;2;0;0;255m%}"
-PROMPT_RED="%{\\e[38;2;255;0;0m%}"
-PROMPT_RESETCOLOUR="%{\\e[0m%}"
+PROMPT_BLUE="%{\e[38;2;0;0;255m%}"
+PROMPT_RED="%{\e[38;2;255;0;0m%}"
+PROMPT_RESETCOLOUR="%{\e[0m%}"
 
 function is_git_repo() {
   git rev-parse --is-inside-work-tree &>/dev/null
@@ -66,7 +66,6 @@ function update_prompt() {
   PROMPT="$PROMPT_ATOM$PROMPT_DIRNAME$PROMPT_BRANCH$PROMPT_STATUS%{$reset_color%}"
 }
 
-autoload -U colors && colors
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_prompt
 
