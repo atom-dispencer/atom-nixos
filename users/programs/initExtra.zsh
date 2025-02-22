@@ -11,9 +11,9 @@ function prompt_atom() {
   local last_exit_code=$1
 
   if [[ $last_exit_code == 0 ]]; then
-    PROMPT_ATOM="%F{rgb:0/255/0}  $last_exit_code "
+    PROMPT_ATOM="%F{#0000ff)  $last_exit_code "
   else
-    PROMPT_ATOM="%F{rgb:0/0/255}  $last_exit_code "
+    PROMPT_ATOM="%F{#00ff00}  $last_exit_code "
   fi
 }
 
