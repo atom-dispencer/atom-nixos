@@ -18,21 +18,17 @@ function prompt_atom() {
 }
 
 function prompt_dirname() {
-  PROMPT_DIRNAME="%{$fg_bold[blue]%}"
-  PROMPT_DIRNAME+="${PWD##*/}"
-  PROMPT_DIRNAME+="%{$reset_color}"
+  PROMPT_DIRNAME="%{$fg_bold[blue]%}${PWD##*/}%{$reset_color%} "
 }
 
 function prompt_branch() {
-  PROMPT_BRANCH="%{$fg_bold[blue]%}"
-
   if is_git_repo; then
     local branch="$(git branch --show-current)"
 
     if [[ -n $branch ]]; then
-      PROMPT_BRANCH="%{$fg_bold[yellow]%} $branch%{$reset_color%}"
+      PROMPT_BRANCH="%{$fg_bold[yellow]%} $branch%{$reset_color%} "
     else
-      PROMPT_BRANCH="%{$fg_bold[red]%} DETACHED%{$reset_color%}"  # Handle detached HEAD
+      PROMPT_BRANCH="%{$fg_bold[red]%} DETACHED%{$reset_color%} "  # Handle detached HEAD
     fi
   else
     PROMPT_BRANCH=""
