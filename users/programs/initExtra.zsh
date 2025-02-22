@@ -12,9 +12,9 @@ function prompt_atom() {
   local last_exit_code=$1
 
   if [[ $last_exit_code == 0 ]]; then
-    PROMPT_ATOM="%F{#00ff00}  $last_exit_code "
+    PROMPT_ATOM="%F{#a6bf00}  $last_exit_code "
   else
-    PROMPT_ATOM="%F{#ff0000}  $last_exit_code "
+    PROMPT_ATOM="%F{#cb4b16}  $last_exit_code "
   fi
 }
 
@@ -27,9 +27,9 @@ function prompt_branch() {
     local branch="$(git branch --show-current)"
 
     if [[ -n $branch ]]; then
-      PROMPT_BRANCH="%F{#009090} $branch "
+      PROMPT_BRANCH="%F{#2aa198} $branch "
     else
-      PROMPT_BRANCH="%F{#ff0000} DETACHED "  # Handle detached HEAD
+      PROMPT_BRANCH="%F{#d33682} DETACHED "  # Handle detached HEAD
     fi
   else
     PROMPT_BRANCH=""
