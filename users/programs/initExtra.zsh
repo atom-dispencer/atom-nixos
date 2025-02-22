@@ -40,7 +40,7 @@ function prompt_status() {
     echo "💔"
 
   # Staged changes?
-  else
+  elif $(git diff-files --quiet); then
     echo "🧡"
 
   # No changes
