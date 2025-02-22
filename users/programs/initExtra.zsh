@@ -41,14 +41,21 @@ function prompt_status() {
     return 0
   fi
 
-  if [[ -n $(git status --porcelain --untracked-files) ]]; then
-    PROMPT_STATUS="💔"  # Untracked files
+  # Untracked files
+  if [[ -n $(git ls-files --others --exclude-standard) ]]; then
+    PROMPT_STATUS="💔 "
+
+  # Unstaged changes
   elif ! git diff --quiet 2>/dev/null; then
-    PROMPT_STATUS="🧡"  # Unstaged changes
+    PROMPT_STATUS="🧡 "
+
+  # Staged changes
   elif ! git diff --cached --quiet 2>/dev/null; then
-    PROMPT_STATUS="💛"  # Staged changes
+    PROMPT_STATUS="💛 "  
+
+  # Up to date
   else
-    PROMPT_STATUS="💜"  # Clean state
+    PROMPT_STATUS="💜 " 
   fi
 }
 
