@@ -53,6 +53,7 @@ function prompt_status() {
   # Unpushed changes
   elif [[ -n $(git log --branches --not --remotes) ]]; then
     PROMPT_STATUS="💛 "  
+    #testing
 
   # Up to date
   else
