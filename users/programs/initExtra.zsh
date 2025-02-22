@@ -50,8 +50,8 @@ function prompt_status() {
   elif ! git diff --quiet 2>/dev/null; then
     PROMPT_STATUS="🧡 "
 
-  # Staged changes
-  elif ! git diff --cached --quiet 2>/dev/null; then
+  # Unpushed changes
+  elif [[ -n $(git log --branches --not --remotes) ]]; then
     PROMPT_STATUS="💛 "  
 
   # Up to date
