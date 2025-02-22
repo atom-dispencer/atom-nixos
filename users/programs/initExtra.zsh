@@ -10,11 +10,12 @@ function is_git_repo() {
 
 function prompt_atom() {
   local last_exit_code=$1
+  local last_code_fmt=$(printf "%3s" $?)
 
   if [[ $last_exit_code == 0 ]]; then
-    PROMPT_ATOM="%F{#a6bf00}  $last_exit_code "
+    PROMPT_ATOM="%F{#a6bf00} $last_code_fmt "
   else
-    PROMPT_ATOM="%F{#cb4b16}  $last_exit_code "
+    PROMPT_ATOM="%F{#cb4b16} $last_code_fmt "
   fi
 }
 
