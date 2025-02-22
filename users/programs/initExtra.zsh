@@ -3,8 +3,9 @@
 # ZSH Prompt
 #
 
-PROMPT_BLUE="\e[38;2;0;0;255m"
-PROMPT_RESETCOLOUR="\e[0m"
+PROMPT_BLUE="%{\\e[38;2;0;0;255m%}"
+PROMPT_RED="%{\\e[38;2;255;0;0m%}"
+PROMPT_RESETCOLOUR="%{\\e[0m%}"
 
 function is_git_repo() {
   git rev-parse --is-inside-work-tree &>/dev/null
@@ -16,7 +17,7 @@ function prompt_atom() {
   if [[ $last_exit_code == 0 ]]; then
     PROMPT_ATOM="${PROMPT_BLUE}  $last_exit_code ${PROMPT_RESETCOLOUR}"
   else
-    PROMPT_ATOM="%{$fg_bold[magenta]%}  $last_exit_code%{$reset_color%} "
+    PROMPT_ATOM="${PROMPT_RED}  $last_exit_code ${PROMPT_RESETCOLOUR}"
   fi
 }
 
