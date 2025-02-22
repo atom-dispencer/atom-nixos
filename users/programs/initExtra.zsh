@@ -11,13 +11,10 @@ function prompt_atom() {
   local last_exit_code=$1
 
   if [[ $last_exit_code == 0 ]]; then
-    PROMPT_ATOM="%{$fg_bold[blue]%}"
+    PROMPT_ATOM="%{$fg_bold[blue]%}  $last_exit_code%{$reset_color%} "
   else
-    PROMPT_ATOM="%{$fg_bold[magenta]%}"
+    PROMPT_ATOM="%{$fg_bold[magenta]%}  $last_exit_code%{$reset_color%} "
   fi
-
-  PROMPT_ATOM+="  $last_exit_code "
-  PROMPT_ATOM+="%{$reset_color}"
 }
 
 function prompt_dirname() {
@@ -30,14 +27,21 @@ function prompt_branch() {
   PROMPT_BRANCH="%{$fg_bold[blue]%}"
 
   if is_git_repo; then
-    PROMPT_BRANCH+="$(git branch --show-current)"
-  fi
+    local branch="$(git branch --show-current)"
 
-  PROMPT_BRANCH+="%{$reset_color}"
+    if [[ -n $branch ]]; then
+      PROMPT_BRANCH="%{$fg_bold[yellow]%} $branch%{$reset_color%}"
+    else
+      PROMPT_BRANCH="%{$fg_bold[red]%} DETACHED%{$reset_color%}"  # Handle detached HEAD
+    fi
+  else
+    PROMPT_BRANCH=""
+  fi
 }
 
 function prompt_status() {
   if ! is_git_repo; then
+    PROMPT_STATUS=""
     return 0
   fi
 
@@ -59,7 +63,7 @@ function update_prompt() {
   prompt_dirname
   prompt_branch
   prompt_status
-  PROMPT="$PROMPT_ATOM $PROMPT_DIRNAME $PROMPT_BRANCH $PROMPT_STATUS %{$reset_color%}"
+  PROMPT="$PROMPT_ATOM$PROMPT_DIRNAME$PROMPT_BRANCH$PROMPT_STATUS%{$reset_color%}"
 }
 
 autoload -Uz add-zsh-hook
