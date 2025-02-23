@@ -13,7 +13,7 @@
       initExtra = builtins.readFile ./initExtra.zsh;
     };
 
-    file = {
+    home.file = {
       ".zsh/_git" = {
         source = "./_git";
       };
