@@ -75,6 +75,12 @@ autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_prompt
 
 
+#
+# Enable fancy completions (like git)
+#
+# Consider -u option to suppress unsafe warnings?
+autoload -Uz compinit && compinit
+
 
 #
 # SSH
