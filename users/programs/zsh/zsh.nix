@@ -11,15 +11,10 @@
       '';
 
       initExtra = builtins.readFile ./initExtra.zsh;
-    };
 
-    home.file = {
-      ".zsh/_git" = {
-        source = ./_git;
-      };
-
-      ".zsh/git-completion.bash" = {
-        source = ./git-completion.bash;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "git" ];
       };
     };
 }
