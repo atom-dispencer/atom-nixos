@@ -15,11 +15,11 @@
 
     home.file = {
       ".zsh/_git" = {
-        source = "./_git";
+        source = ./_git;
       };
 
       ".zsh/git-completion.bash" = {
-        source = "./git-completion.bash";
+        source = ./git-completion.bash;
       };
     };
 }
