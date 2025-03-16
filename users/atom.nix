@@ -14,7 +14,7 @@
 
     shellAliases = {
       ex = "explorer.exe ."
-    },
+    };
 
     # ~ twiddlin my thumbs ~
     
