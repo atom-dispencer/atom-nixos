@@ -18,7 +18,7 @@
       };
     };
 
-    programs.zoxide {
+    programs.zoxide = {
       enable = true;
     };
 }
