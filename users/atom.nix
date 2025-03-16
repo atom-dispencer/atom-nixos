@@ -12,6 +12,10 @@
     username = "atom";
     homeDirectory = "/home/atom";
 
+    shellAliases = {
+      ex = "explorer.exe ."
+    },
+
     # ~ twiddlin my thumbs ~
     
     packages = with pkgs; [
