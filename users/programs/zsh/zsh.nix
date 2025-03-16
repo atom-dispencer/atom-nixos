@@ -17,4 +17,8 @@
         plugins = [ "git" ];
       };
     };
+
+    programs.zoxide {
+      enable = true;
+    };
 }
