@@ -13,7 +13,7 @@
     homeDirectory = "/home/atom";
 
     shellAliases = {
-      ex = "explorer.exe ."
+      ex = "explorer.exe .";
     };
 
     # ~ twiddlin my thumbs ~
