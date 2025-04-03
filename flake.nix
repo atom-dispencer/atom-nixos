@@ -40,7 +40,7 @@
       #   nixos-rebuild switch --flake .#atom-nix
 
       # Default system configuration (WSL)
-      nixos = nixpkgs.lib.nixosSystem {
+      wsl = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         system = "x86_64-linux"; # Henceforth, nixpkgs is automagically available as 'pkgs'
         modules = [
@@ -53,11 +53,11 @@
     };
 
     homeConfigurations = {
-      atom-laptop = home-manager.lib.homeManagerConfiguration {
+      popos = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
           ./home/atom.nix
-          ./home/atom-laptop.nix
+          ./home/atom-popos.nix
         ];
       };
     };
