@@ -23,6 +23,18 @@
       oh-my-zsh
       neofetch
 
+      # Utilities
+      git
+      wget
+      curl
+      unzip
+      file
+
+      # C
+      (hiPrio gcc) # This resolves collisions between gcc and clang both providing a C++ binary
+      clang
+      gnumake
+      llvmPackages_19.clang-tools
       # Haskell
       ghc
       cabal-install
@@ -38,15 +50,6 @@
       # Python
       python313
 
-      git
-      wget
-      curl
-      unzip
-      gcc
-      clang
-      gnumake
-      llvmPackages_19.clang-tools
-      file
     ];
   };
 

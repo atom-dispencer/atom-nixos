@@ -22,16 +22,11 @@
     "nix-command"
     "flakes"
   ];
+  
+  # Packages which should only be installed on a NixOS/WSL system
   environment.systemPackages = with pkgs; [
-    # git
-    # wget
-    # curl
-    # unzip
-    # gcc
-    # clang
-    # gnumake
-    # llvmPackages_19.clang-tools
-    # file
+    # example
+    # example_2
   ];
   
   security.sudo.wheelNeedsPassword = true;
