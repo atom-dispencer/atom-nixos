@@ -23,15 +23,15 @@
     "flakes"
   ];
   environment.systemPackages = with pkgs; [
-    git
-    wget
-    curl
-    unzip
-    gcc
-    clang
-    gnumake
-    llvmPackages_19.clang-tools
-    file
+    # git
+    # wget
+    # curl
+    # unzip
+    # gcc
+    # clang
+    # gnumake
+    # llvmPackages_19.clang-tools
+    # file
   ];
   
   security.sudo.wheelNeedsPassword = true;
@@ -64,7 +64,7 @@
     extraSpecialArgs = { inherit inputs; };
     users.atom = {
       imports = [
-        ../home/atom-popos.nix
+        ../home/atom-wsl.nix
       ];
     };
   };

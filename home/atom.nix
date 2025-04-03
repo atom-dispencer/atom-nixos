@@ -37,6 +37,16 @@
       matlab-language-server
       # Python
       python313
+
+      git
+      wget
+      curl
+      unzip
+      gcc
+      clang
+      gnumake
+      llvmPackages_19.clang-tools
+      file
     ];
   };
 
