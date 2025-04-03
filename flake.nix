@@ -55,7 +55,7 @@
     homeConfigurations = {
       atom-laptop = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [[
+        modules = [
           ./home/atom.nix
           ./home/atom-laptop.nix
         ];
