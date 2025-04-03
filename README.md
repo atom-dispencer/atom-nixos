@@ -61,3 +61,6 @@ You're not using GPG, you're using SSH. This might be in configuration, but if n
 ```
 git config gpg.format ssh
 ```
+
+## Enable nix-commands and flakes
+Add the relevant entries to the .config/nix/nix.conf file to enable experimental features.
