@@ -64,7 +64,7 @@
     extraSpecialArgs = { inherit inputs; };
     users.atom = {
       imports = [
-        ../users/atom.nix
+        ../home/atom.nix
       ];
     };
   };

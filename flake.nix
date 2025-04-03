@@ -47,7 +47,17 @@
           nixos-wsl.nixosModules.wsl
           home-manager.nixosModules.home-manager
           nix-ld.nixosModules.nix-ld
-          ./system/system.nix
+          ./system/wsl.nix
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      atom-laptop = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [[
+          ./home/atom.nix
+          ./home/atom-laptop.nix
         ];
       };
     };
