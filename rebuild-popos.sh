@@ -9,7 +9,7 @@ git add . -A
 
 
 echo "  Rebuilding NixOS..."
-sudo nix run home-manager -- switch --flake ".#popos?submodules=1"
+sudo nix run home-manager -- switch --flake ".?submodules=1#popos"
 if [ ! $? -eq 0 ]; then
 echo "  Failed to rebuild Nix Home Manager!"
   exit 1
