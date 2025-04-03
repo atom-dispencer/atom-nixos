@@ -16,6 +16,10 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixgl = {
+      url = "github:nix-community/nixGL";
+    };
   };
 
   outputs = { 
@@ -24,6 +28,7 @@
     home-manager,
     nixos-wsl,
     nix-ld,
+    nixgl,
     ... 
   } @ inputs: let
     inherit (self) outputs;
@@ -54,7 +59,10 @@
 
     homeConfigurations = {
       popos = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { 
+          system = "x86_64-linux";
+          overlays = [ nixgl.overlay ];
+        };
         modules = [
           ./home/atom.nix
           ./home/atom-popos.nix
