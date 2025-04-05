@@ -87,4 +87,5 @@ autoload -Uz compinit && compinit
 # SSH
 #
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/github_atom-nixos
+ssh-add ~/.ssh/github_atom-wsl
+ssh-add ~/.ssh/github_atom-popos
