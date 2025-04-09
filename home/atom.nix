@@ -32,7 +32,7 @@
       cmake
 
       # C
-      clang
+      gcc
       gnumake
       llvmPackages_19.clang-tools
       # Haskell
