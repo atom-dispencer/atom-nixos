@@ -29,6 +29,7 @@
       curl
       unzip
       file
+      cmake
 
       # C
       (hiPrio gcc) # This resolves collisions between gcc and clang both providing a C++ binary
