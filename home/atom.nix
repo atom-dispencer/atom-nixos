@@ -32,8 +32,6 @@
       cmake
 
       # C
-      gcc
-      gnumake
       llvmPackages_19.clang-tools
       # Haskell
       ghc
