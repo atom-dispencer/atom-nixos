@@ -89,3 +89,8 @@ autoload -Uz compinit && compinit
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github_atom-wsl
 ssh-add ~/.ssh/github_atom-popos
+
+#
+# Add directories to PATH
+#
+export PATH=$PATH:~/lib/zig-0.15.0-dev/
