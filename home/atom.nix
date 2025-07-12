@@ -49,8 +49,6 @@
       # matlab-language-server
       # Python
       python313
-      # Zig
-      zig
 
     ];
   };
