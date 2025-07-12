@@ -17,7 +17,6 @@
     };
 
     # ~ twiddlin my thumbs ~
-    
     packages = with pkgs; [
       # Shell environment
       oh-my-zsh
@@ -37,19 +36,21 @@
       # Just install gcc, make and clang manually, it's not that hard!
       llvmPackages_19.clang-tools
       # Haskell
-      ghc
-      cabal-install
-      haskell-language-server
+      # ghc
+      # cabal-install
+      # haskell-language-server
       # JS
       nodejs_22
       # Julia
-      julia_19-bin
+      # julia_19-bin
       # Lua
       luarocks-nix
       # Matlab
-      matlab-language-server
+      # matlab-language-server
       # Python
       python313
+      # Zig
+      zig
 
     ];
   };
