@@ -34,6 +34,8 @@
       # No compilers or C build systems are included here because Nix causes issues with compiler 
       # paths on other Linux distributions
       # Just install gcc, make and clang manually, it's not that hard!
+      gnumake
+      bear
       llvmPackages_19.clang-tools
       # Haskell
       # ghc
