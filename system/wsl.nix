@@ -35,7 +35,7 @@
     mutableUsers = false;
     users.atom = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" ];
       password = "atom";
       shell = pkgs.zsh;
     };
@@ -51,6 +51,10 @@
         zlib 
       ];
     };
+  };
+
+  virtualisation.docker = {
+    enable = true;
   };
 
   home-manager = {

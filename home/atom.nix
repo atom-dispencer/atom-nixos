@@ -9,6 +9,7 @@
   ];
 
   home = {
+    stateVersion = "24.05";
     username = "atom";
     homeDirectory = "/home/atom";
 
@@ -54,6 +55,4 @@
 
     ];
   };
-
-  home.stateVersion = "24.05";
 }

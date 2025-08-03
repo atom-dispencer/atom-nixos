@@ -35,16 +35,9 @@
   in {
     
     #
-    # System (NixOS) configuration
+    # System (NixOS / WSL) configuration
     #
     nixosConfigurations = {
-
-      # nixos here is the default name
-      # I only have one config so it doesnt matter
-      # Could be changed to .atom-nix, but would need to use:
-      #   nixos-rebuild switch --flake .#atom-nix
-
-      # Default system configuration (WSL)
       wsl = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         system = "x86_64-linux"; # Henceforth, nixpkgs is automagically available as 'pkgs'
@@ -57,6 +50,9 @@
       };
     };
 
+    #
+    # Home (Pop!_OS) configuration
+    #
     homeConfigurations = {
       popos = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { 
