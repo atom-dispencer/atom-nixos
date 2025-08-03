@@ -38,6 +38,8 @@
       gnumake
       bear
       llvmPackages_19.clang-tools
+      # Go
+      go
       # Haskell
       # ghc
       # cabal-install
